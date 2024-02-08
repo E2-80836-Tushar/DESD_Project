@@ -1,0 +1,10 @@
+17:25:56 **** Incremental Build of configuration Debug for project Rx2 ****
+make -j4 all 
+arm-none-eabi-size   Rx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13680	     20	   1716	  15416	   3c38	Rx2.elf
+Finished building: default.size.stdout
+ 
+
+17:25:57 Build Finished. 0 errors, 0 warnings. (took 1s.61ms)
+

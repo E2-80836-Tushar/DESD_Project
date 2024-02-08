@@ -1,0 +1,10 @@
+17:10:46 **** Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-size   Tx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15116	     20	   1716	  16852	   41d4	Tx2.elf
+Finished building: default.size.stdout
+ 
+
+17:10:47 Build Finished. 0 errors, 0 warnings. (took 954ms)
+
