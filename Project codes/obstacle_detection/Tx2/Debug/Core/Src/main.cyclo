@@ -1,0 +1,10 @@
+../Core/Src/main.c:57:1:__io_putchar	1
+../Core/Src/main.c:176:5:main	4
+../Core/Src/main.c:349:6:SystemClock_Config	3
+../Core/Src/main.c:396:13:MX_CAN1_Init	2
+../Core/Src/main.c:444:13:MX_TIM8_Init	7
+../Core/Src/main.c:510:13:MX_TIM13_Init	4
+../Core/Src/main.c:556:13:MX_USART3_UART_Init	2
+../Core/Src/main.c:589:13:MX_GPIO_Init	1
+../Core/Src/main.c:646:6:HAL_CAN_TxMailbox0CompleteCallback	1
+../Core/Src/main.c:660:6:Error_Handler	1

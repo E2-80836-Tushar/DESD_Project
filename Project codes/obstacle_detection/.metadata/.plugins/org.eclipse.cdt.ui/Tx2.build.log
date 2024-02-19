@@ -1,0 +1,30 @@
+15:39:09 **** Incremental Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:300:68: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  300 |                                                   printf("echo2 : %u , Dis2 : %d\r\n",echo2,dist2);
+      |                                                                   ~^                  ~~~~~
+      |                                                                    |                  |
+      |                                                                    unsigned int       uint32_t {aka long unsigned int}
+      |                                                                   %lu
+../Core/Src/main.c:300:80: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  300 |                                                   printf("echo2 : %u , Dis2 : %d\r\n",echo2,dist2);
+      |                                                                               ~^            ~~~~~
+      |                                                                                |            |
+      |                                                                                int          uint32_t {aka long unsigned int}
+      |                                                                               %ld
+arm-none-eabi-gcc -o "Tx2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/pavan/lllllllllllllllll/Tx2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tx2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Tx2.elf
+ 
+arm-none-eabi-size   Tx2.elf 
+arm-none-eabi-objdump -h -S  Tx2.elf  > "Tx2.list"
+   text	   data	    bss	    dec	    hex	filename
+  24184	    112	   2208	  26504	   6788	Tx2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Tx2.list
+ 
+
+15:39:10 Build Finished. 0 errors, 2 warnings. (took 1s.648ms)
+

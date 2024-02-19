@@ -404,3 +404,87 @@ arm-none-eabi-size   Rx2.elf
   13680	     20	   1716	  15416	   3c38	Rx2.elf
 Finished building: default.size.stdout
  
+22:22:40 **** Incremental Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Tx2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/pavan/kkkkkkkkkkkk/Tx2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tx2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Tx2.elf
+ 
+arm-none-eabi-size   Tx2.elf 
+arm-none-eabi-objdump -h -S  Tx2.elf  > "Tx2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15116	     20	   1716	  16852	   41d4	Tx2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Tx2.list
+ 
+22:23:21 **** Build of configuration Debug for project Rx2 ****
+make -j4 all 
+arm-none-eabi-size   Rx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13680	     20	   1716	  15416	   3c38	Rx2.elf
+Finished building: default.size.stdout
+ 
+11:09:32 **** Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-size   Tx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15116	     20	   1716	  16852	   41d4	Tx2.elf
+Finished building: default.size.stdout
+ 
+11:10:17 **** Build of configuration Debug for project Rx2 ****
+make -j4 all 
+arm-none-eabi-size   Rx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13680	     20	   1716	  15416	   3c38	Rx2.elf
+Finished building: default.size.stdout
+ 
+11:29:41 **** Incremental Build of configuration Debug for project Rx2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Rx2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/pavan/kkkkkkkkkkkk/Rx2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Rx2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Rx2.elf
+ 
+arm-none-eabi-size   Rx2.elf 
+arm-none-eabi-objdump -h -S  Rx2.elf  > "Rx2.list"
+   text	   data	    bss	    dec	    hex	filename
+  13772	     20	   1716	  15508	   3c94	Rx2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Rx2.list
+ 
+11:30:35 **** Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Tx2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/pavan/kkkkkkkkkkkk/Tx2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tx2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Tx2.elf
+ 
+arm-none-eabi-size   Tx2.elf 
+arm-none-eabi-objdump -h -S  Tx2.elf  > "Tx2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15192	     20	   1716	  16928	   4220	Tx2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Tx2.list
+ 
+11:33:21 **** Incremental Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Tx2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/pavan/kkkkkkkkkkkk/Tx2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tx2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Tx2.elf
+ 
+arm-none-eabi-size   Tx2.elf 
+arm-none-eabi-objdump -h -S  Tx2.elf  > "Tx2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15228	     20	   1716	  16964	   4244	Tx2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Tx2.list
+ 
+11:34:09 **** Incremental Build of configuration Debug for project Tx2 ****
+make -j4 all 
+arm-none-eabi-size   Tx2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15228	     20	   1716	  16964	   4244	Tx2.elf
+Finished building: default.size.stdout
+ 
