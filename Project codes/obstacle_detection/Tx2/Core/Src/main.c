@@ -81,91 +81,6 @@ CAN_TxHeaderTypeDef TxHeader;
 uint8_t TxData[5];
 uint32_t TxMailBox;
 
-//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-//	//Switch_Flag = 1;
-//	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-//		if(GPIO_Pin == GPIO_PIN_1)
-//		{
-//			TxData[0] = '1';	//yellow
-//			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//				Error_Handler();
-//			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//		}
-//
-//		else if(GPIO_Pin == GPIO_PIN_2)
-//		{
-//			TxData[0] = '2';	//yellow
-//			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//				Error_Handler();
-//			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-//		}
-//
-//		else if(GPIO_Pin == GPIO_PIN_0)
-//		{
-//			TxData[0] = '3';	//yellow
-//			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//				Error_Handler();
-//			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-//		}
-
-//	//	Switch_Flag = 1;
-//		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-//		if(GPIO_Pin == GPIO_PIN_0)
-//		{
-//			TxData[0] = '1';	//yellow
-//			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//				Error_Handler();
-//			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//			//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-//
-//			//Switch_Flag = 1;
-//		}
-//
-////		else if(GPIO_Pin == GPIO_PIN_1)
-//		//{
-////			TxData[0] = '2';	//yellow
-////			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-////				Error_Handler();
-//			//HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-//			//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-//			//Switch_Flag = 1;
-//		//}
-//
-//		else if(GPIO_Pin == GPIO_PIN_2)
-//		{
-//			TxData[0] = '3';	//yellow
-//			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//				Error_Handler();
-//			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-//			//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-//			//Switch_Flag = 2;
-//		}
-//}
-
-//void receive_choice(char str[])
-//{
-//     int i=0;
-//     char ch;
-//     do{
-//         HAL_UART_Receive(&huart3, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
-//         str[i++]=ch;
-//     }while(ch!='\r');
-//        str[i++]='\n';
-//        str[i]='\0';
-//}
-//
-//void receive_number(char str2[])
-//{
-//	  int i=0;
-//	     char ch;
-//	     do{
-//	         HAL_UART_Receive(&huart3, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
-//	         str2[i++]=ch;
-//	     }while(ch!='\r');
-//	        str2[i++]='\n';
-//	        str2[i]='\0';
-//}
-
 
 /* USER CODE END 0 */
 
@@ -176,14 +91,6 @@ uint32_t TxMailBox;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-//			char str[20];
-//		    char choice;
-//		    int value = 0;
-//		    char str1[20];
-//		    char str2[20];
-//		    int number;
-//		    int mask = 1;
-//		    int res;
 
   /* USER CODE END 1 */
 
@@ -235,102 +142,25 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-//	  	  	  switch(Switch_Flag)
-//	  	  	  {
-//	  	  	  	  case 1:
-//	  	  	  		  TxData[0] = '1';	//yellow
-//	  	  	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	  	  	  			  Error_Handler();
-//	  	  	  		  //HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//	  	  	  		  break;
-//
-//	  	  	  	  case 2:
-//	  	  	  		  TxData[0] = '2';	//yellow
-//	  	  	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	  	  	  			  Error_Handler();
-//	  	  	  		  //HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//	  	  	  		  break;
-//
-//	  	  	  	  case 3:
-//	  	  	  		  TxData[0] = '3';	//yellow
-//	  	  	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	  	  	  			  Error_Handler();
-//	  	  	  		  //HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-//	  	  	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-//	  	  	  		  break;
-//	  	  	  }
-
-
-//	  	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"Name = Pavan Pandharinath Karpe\r\n", sizeof("Name = Pavan Pandharinath Karpe\r\n"), HAL_MAX_DELAY);
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"ROLL NO: 80807\r\n", sizeof("ROLL NO: 80807\r\n"), HAL_MAX_DELAY);
-//
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"list of cases\r\n", sizeof("list of cases\r\n"), HAL_MAX_DELAY);
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"1. LED Pattern\r\n", sizeof("1. LED Pattern\r\n"), HAL_MAX_DELAY);
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"2. Parity Check\r\n", sizeof("2. Parity Check\r\n"), HAL_MAX_DELAY);
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"3. ADC Reading\r\n", sizeof("3. ADC Reading\r\n"), HAL_MAX_DELAY);
-//	 	  	  HAL_UART_Transmit(&huart2, (uint8_t *)"Enter your choice\r\n", sizeof("Enter your choice\r\n"), HAL_MAX_DELAY);
-//
-//	 	  	  receive_choice(str);
-//	 	  	  choice = str[0]-'0';
-//
-//
-//	 	  	  if(choice == 1){
-//	 	  		  TxData[0] = '1';	//yellow
-//	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	 	  			  Error_Handler();
-//	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	 	  		  while(1)
 	 	  		  {
 	 	  			 if(HAL_GetTick()-delay >= 1000){
 	 	  				 delay = HAL_GetTick();
-	 	  				 //echo1 = HAL_TIM_ReadCapturedValue(&htim8, TIM_CHANNEL_1);
 	 	    	  		  echo2 = HAL_TIM_ReadCapturedValue(&htim8, TIM_CHANNEL_2);
-	 	  				 //dis1 = echo1 / 58.0f;
-	 	  	 	  		  //dist2 = echo2 / 58.0f;
 	 	  		  		  dist2 = ((echo2 * 0.0340)/2);
 	 	  				  printf("echo2 : %u , Dis2 : %d\r\n",echo2,dist2);
 
 	 	  				  if(dist2 < 5)
 	 	  				  {
-	 	  					  TxData[0] = '5';	//yellow
+	 	  					  TxData[0] = '5';	
 	 	  					  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
 	 	  						  Error_Handler();
 	 	  					  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
 	 	  				  }
-	 	  				  //HAL_Delay(300);
+	 	  				  
 	 	  			}
  	  		  }
-//	 	  	  }
-//	 	  	  if(choice == 2){
-//	 	  		  TxData[0] = '2';	//yellow
-//	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	 	  			  Error_Handler();
-//	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-//	 	  	  }
-//	 	  	  if(choice == 3){
-//	 	  		  TxData[0] = '3';	//yellow
-//	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	 	  		 	  Error_Handler();
-//	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-//	 	  	  }
 
-
-
-//	  	  	  if(Switch_Flag == 1){
-//	  	  		TxData[0] = 'S';	//yellow
-//	  	  		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	  	  			Error_Handler();
-//	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//	  	  		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

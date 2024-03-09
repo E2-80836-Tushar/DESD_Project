@@ -124,7 +124,6 @@ int main(void)
 	  	  			for(i=40; i<=60;i++)
 	  	  			{
 	  	  			 	htim8.Instance->CCR1 = i;
-	  	  			  	//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
 	  	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	  	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
 	  	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
@@ -135,140 +134,12 @@ int main(void)
 	  	  			  	  		  		{
 	  	  			  	  		  			 	 htim8.Instance->CCR1 = i;
 	  	  			  	  		  			 	 HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-	  	  			  	  	//	  	  	  		 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-	  	  			  	  	//	  	  	  		 HAL_Delay(1000);
-	  	  			  	  	//	  	  	  		 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 	  	  			  	  		  		}
 
 	  	  			  	  	  }
 	  	  			}
 	  	  			  	break;
 	  	   		}
-
-
-//	  switch(RxData[0])
-//	  {
-//	  	  case '1':
-//	  		while(1)
-//	  		{
-//	  			for(i=40; i<=50;i++)
-//	  			{
-//	  			 	htim8.Instance->CCR1 = i;
-//	  			  	//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//	  			  	  	  if(RxData[0] != 1)
-//	  			  	  	  {
-//	  			  	  		  break;
-//	  			  	  	  }
-//	  			}
-//	  			  	break;
-//	   		}
-//	  	  break;
-//
-//
-//	  	  case '2':
-//	  		while(1)
-//	  		  {
-//	  		  		for(i=50; i<=75;i++)
-//	  		  		{
-//	  		  			htim8.Instance->CCR1 = i;
-//	  		  			//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-//		  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-//		  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-//		  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//	  		  			  	 if(RxData[0] != 1)
-//	  		  			  	 {
-//	  		  			  	  	break;
-//	  		  			  	 }
-//	  		  	}
-//	  		  	break;
-//	  		  }
-//	  		break;
-//
-//	  	 case '3':
-//	  		while(1)
-//	  		{
-//	  			for(i=75; i<=100;i++)
-//	  			{
-//	  				htim8.Instance->CCR1 = i;
-//	  		  		//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-//	  	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-//	  		  		if(RxData[0] != 1)
-//	  		  		{
-//	  		  		  	break;
-//	  		  		}
-//	  	  		}
-//	  			break;
-//	 		}
-//	  	break;
-//
-//
-//
-//
-//	  	case '5':
-//	  		for(i=40; i>=0; i--)
-//	  		{
-//	  			 	 htim8.Instance->CCR1 = i;
-//	  			 	 HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-////	  	  	  		 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-////	  	  	  		 HAL_Delay(1000);
-////	  	  	  		 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-//	  		}
-//	  	break;
-
-//	  }
-
-
-
-
-//	  	  	if(RxData[0] == '1')
-//	  	  	{
-//	  	  		while(1)
-//	  	  		{
-//	  	  			for(i=20; i<=50;i++)
-//	  	  			{
-//	  	  			  	htim8.Instance->CCR1 = i;
-//	  	  				HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-//	  	  				if(RxData[0] != 1)
-//	  	  				{
-//
-//	  	  				}
-//	  	   	  		}
-//
-//	  	  		}
-//	  	  	}
-//
-//	  	  	if(RxData[0] == '2')
-//	 	  	{
-//	  	   		while(1)
-//	   	  		{
-// 	  	  			for(i=50; i<=75;i++)
-//	  	  	  	  	{
-//	  	  	  	  	 	htim8.Instance->CCR1 = i;
-//	  	  	  	  		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-//	  	  	  	   	}
-//	  	  	  	 }
-//	  	   	}
-//
-//	  	  	if(RxData[0] == '3')
-//	  	 	{
-//	  	   		while(1)
-// 	   	  		{
-//	  	  			for(i=75; i<=100;i++)
-//	  	   	  	  	{
-//	  	  	  	  	 	htim8.Instance->CCR1 = i;
-//	  	  	  	   		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-//	  	  	   	   	}
-//	  	  	  	 }
-//  	  	   	}
-
-	  		if(RxData[0] == 'S'){
-	  			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET); //
-	  		}
 
 
     /* USER CODE END WHILE */

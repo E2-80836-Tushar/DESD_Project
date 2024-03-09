@@ -62,8 +62,15 @@ uint8_t TxData[5];
 uint32_t TxMailBox;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	Switch_Flag = 1;
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+	if(GPIO_Pin== GPIO_PIN_1 || GPIO_Pin== GPIO_PIN_0)
+	{
+		Switch_Flag = 1;
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+		TxData[0] = 'S';	//yellow
+		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
+			Error_Handler();
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+	}
 //	HAL_Delay(1000);
 //	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
 //	Switch_Flag = 0;
@@ -118,15 +125,49 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  	  	  if(Switch_Flag == 1){
-	  	  		TxData[0] = 'S';	//yellow
-	  	  		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-	  	  			Error_Handler();
-	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-	  	  		}
+//	  	  	  if(Switch_Flag == 1){
+//	  	  		TxData[0] = 'S';	//yellow
+//	  	  		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
+//	  	  			Error_Handler();
+//	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+//	  	  		}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+//	  	  	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1)==0)
+//			  {
+//				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+//				  //HAL_Delay(2000);
+//				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+//				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+//				  TxData[0] = '1';	//yellow
+//					if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
+//					{
+//						Error_Handler();
+//					}
+
+
+					//HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+
+//			  }
+
+	  	  	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2)==0)
+			  {
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+				 // HAL_Delay(2000);
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+
+			  }
+
+	  	  	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3)==0)
+			  {
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+		//		  HAL_Delay(2000);
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
+				  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+			  }
   }
   /* USER CODE END 3 */
 }
@@ -244,9 +285,15 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PA0 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  /*Configure GPIO pins : PA0 PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA2 PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 

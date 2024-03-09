@@ -67,9 +67,6 @@ uint32_t TxMailBox;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	Switch_Flag = 1;
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-//	HAL_Delay(1000);
-//	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//	Switch_Flag = 0;
 }
 
 void receive_choice(char str[])
@@ -107,12 +104,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 			char str[20];
 		    char choice;
-//		    int value = 0;
-//		    char str1[20];
-//		    char str2[20];
-//		    int number;
-//		    int mask = 1;
-//		    int res;
 
   /* USER CODE END 1 */
 
@@ -168,32 +159,25 @@ int main(void)
 
 
 	 	  	  if(choice == 1){
-	 	  		  TxData[0] = '1';	//yellow
+	 	  		  TxData[0] = '1';	
 	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
 	 	  			  Error_Handler();
 	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	 	  	  }
 	 	  	  if(choice == 2){
-	 	  		  TxData[0] = '2';	//yellow
+	 	  		  TxData[0] = '2';	
 	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
 	 	  			  Error_Handler();
 	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
 	 	  	  }
 	 	  	  if(choice == 3){
-	 	  		  TxData[0] = '3';	//yellow
+	 	  		  TxData[0] = '3';	
 	 	  		  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
 	 	  		 	  Error_Handler();
 	 	  		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	 	  	  }
 
 
-
-//	  	  	  if(Switch_Flag == 1){
-//	  	  		TxData[0] = 'S';	//yellow
-//	  	  		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailBox) != HAL_OK)
-//	  	  			Error_Handler();
-//	  	  		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-//	  	  		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
